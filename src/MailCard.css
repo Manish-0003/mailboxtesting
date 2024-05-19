@@ -1,0 +1,70 @@
+
+
+.accordionSummaryContent {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .accordLeft {
+    display: flex;
+    align-items: center;
+  }
+  
+  .accordMiddle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    margin-left: 15px;
+  }
+  
+  .accordRight {
+    display: flex;
+    align-items: center;
+  }
+  
+  .accordDetails {
+    width: 100%;
+  }
+  
+  .accordDetailsTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .accordDetailsInfo {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .sendersInfo {
+    margin-left: 10px;
+    flex: 1;
+    
+    
+  }
+  
+  .sendersInfoDate {
+    display: flex;
+    align-items: center;
+  }
+  
+  .senderInfoDateOption {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .mailContent {
+    margin-top: 20px;
+  }
+  
+  .mailContentAccord {
+    white-space: pre-wrap;
+  }
+  .MuiSvgIcon-root {
+    color: black;
+  }

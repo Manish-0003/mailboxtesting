@@ -1,0 +1,80 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+  
+  .headerLeft {
+    display: flex;
+    align-items: center;
+  }
+  
+  .headerLeft img {
+    height: 40px;
+    margin-left: 10px;
+  }
+  
+  .headerMiddle {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .header__SearchContainer {
+    display: flex;
+    align-items: center;
+    background-color: #f1f3f4;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .header__SearchContainer input {
+    border: none;
+    outline: none;
+    background: none;
+    padding: 5px;
+    margin-left: 10px;
+    flex: 1;
+  }
+  
+  .headerRight {
+    display: flex;
+    align-items: center;
+  }
+  
+  .headerRightIcons {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+  
+  .headerRightIcons svg {
+    margin-right: 20px;
+    color: black; /* Default icon color to black */
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .headerRightIcons svg:hover {
+    color: gray; /* Change color on hover if desired */
+  }
+  
+  .headerRight .MuiAvatar-root {
+    cursor: pointer;
+    transition: opacity 0.3s;
+  }
+  
+  .headerRight .MuiAvatar-root:hover {
+    opacity: 0.8;
+  }
+  
