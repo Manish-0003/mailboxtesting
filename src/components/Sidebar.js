@@ -1,23 +1,12 @@
-// src/Sidebar.js
-
 import React, { useState, useEffect } from 'react';
-import './Sidebar.css';
-import {
-  Avatar,
-  Button,
-  IconButton,
-  Typography,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-} from '@mui/material';
+import '../css/Sidebar.css';
+import {Button, IconButton} from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import InboxIcon from '@mui/icons-material/Inbox';
 import MarkChatUnreadIcon from '@mui/icons-material/MarkChatUnread';
 import StarIcon from '@mui/icons-material/Star';
 import WatchLaterIcon from '@mui/icons-material/WatchLater';
 import SendIcon from '@mui/icons-material/Send';
-import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
 import CloseIcon from '@mui/icons-material/Close';
 import TextFormatIcon from '@mui/icons-material/TextFormat';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
@@ -29,11 +18,11 @@ import Modal from 'react-modal';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import { selectUser } from './userSlice';
+import { selectUser } from '../store/userSlice';
 import { useSelector } from 'react-redux';
-import { db } from './firebase';
+import { db } from '../firebase';
 import firebase from 'firebase/compat/app';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom'; 
 
 function Sidebar() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -45,7 +34,7 @@ function Sidebar() {
   const [mails, setMails] = useState([]);
 
   const user = useSelector(selectUser);
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   useEffect(() => {
     const unsubscribe = db
@@ -88,10 +77,10 @@ function Sidebar() {
     }
   };
   const handleMailClick = () => {
-    navigate('/mail'); // Navigate to the Mail component
+    navigate('/mail'); 
   };
   const handleSendClick = () => {
-    navigate('/sent-mails'); // Navigate to the SentMails component
+    navigate('/sent-mails'); 
   };
 
 
@@ -101,7 +90,7 @@ function Sidebar() {
       {mails.map(({ id }) => (
         <div key={id}></div>
       ))}
-      <div className="sidebarOption">
+      <div className="sidebarOptionIcon">
         <Button onClick={() => setModalOpen(true)} startIcon={<AddIcon />}>
           Compose
         </Button>
@@ -156,7 +145,7 @@ function Sidebar() {
                 <ReactQuill
                   value={content}
                   onChange={(value) => setContent(value)}
-                  placeholder="Compose Your Mail.."
+                  placeholder="Compose Mail.."
                 />
               </div>
             </div>
@@ -179,7 +168,7 @@ function Sidebar() {
       </div>
       <div className="sidebarOptionIcon" onClick={handleMailClick}>
         <InboxIcon />
-        Mail ({mails.length})
+        Inbox ({mails.length})
       </div>
       <div className="sidebarOptionIcon">
         <MarkChatUnreadIcon />
@@ -193,19 +182,11 @@ function Sidebar() {
         <WatchLaterIcon />
         Snoozed
       </div>
-      <div className="sidebarOption" onClick={handleSendClick}>
+      <div className="sidebarOptionIcon" onClick={handleSendClick}>
         <Button startIcon={<SendIcon />}>Sent Mails</Button>
       </div>
-      <div className="sidebarOptionIcon">
-        <InsertDriveFileIcon />
-        Draft
-      </div>
-      <div className="sidebarBottomLast">
-        <div className="sidebarOption">
-          <Avatar />
-          <span>Profile</span>
-        </div>
-      </div>
+      
+      
     </div>
   );
 }

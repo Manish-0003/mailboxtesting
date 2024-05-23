@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
-import { auth } from "./firebase";
-import './Login.css';
+import { useNavigate } from 'react-router-dom'; 
+import { auth } from "../firebase";
+import '../css/Login.css';
 
-const Login = ({ onLogin, isLoggedIn }) => {
+function Login({ onLogin, isLoggedIn }) {
     const navigate = useNavigate();
     const [register, setRegister] = useState(false);
     const [email, setEmail] = useState("");
@@ -16,7 +16,7 @@ const Login = ({ onLogin, isLoggedIn }) => {
             await auth.createUserWithEmailAndPassword(email, password);
             alert('Registered successfully');
             onLogin();
-            navigate('/dashboard'); // Redirect to dashboard page
+            navigate('/login'); 
         } catch (error) {
             alert(error.message);
         } finally {
@@ -30,7 +30,7 @@ const Login = ({ onLogin, isLoggedIn }) => {
             await auth.signInWithEmailAndPassword(email, password);
             alert('Logged in successfully');
             onLogin();
-            navigate('/dashboard'); // Redirect to dashboard page
+            navigate('/dashboard'); 
         } catch (error) {
             alert("User not found");
         } finally {
@@ -42,7 +42,7 @@ const Login = ({ onLogin, isLoggedIn }) => {
         return (
             <div className="loading">
                 <img
-                    src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b6e0b072897469.5bf6e79950d23.gif"
+                    src="https://c4.wallpaperflare.com/wallpaper/764/505/66/baby-groot-4k-hd-superheroes-wallpaper-preview.jpg"
                     alt="Loading"
                 />
                 <h1>Please Wait...</h1>
@@ -66,26 +66,26 @@ const Login = ({ onLogin, isLoggedIn }) => {
                         <input
                             value={email}
                             required={true}
-                            onChange={(e) => setEmail(e.target.value)}
+                            onChange={(event) => setEmail(event.target.value)}
                             type="text"
                             placeholder="Email"
                         />
                         <input
                             value={password}
                             required={true}
-                            onChange={(e) => setPassword(e.target.value)}
+                            onChange={(event) => setPassword(event.target.value)}
                             type="password"
                             placeholder="Password"
                         />
                         <button type="submit" onClick={handleRegister}>Register</button>
                     </div>
-                    <p onClick={() => setRegister(false)}>Login?</p>
+                    <p onClick={() => setRegister(false)}>Login</p>
                 </div>
             ) : (
                 <div className="loginContainer">
                     <div className="logo">
                         <img
-                            src="https://media.licdn.com/dms/image/D5612AQGk64ycsAchYw/article-cover_image-shrink_720_1280/0/1685813144705?e=2147483647&v=beta&t=Soh9RFURdLWq1XkYL5jLoqDudGtDHMLwoH1ND8cLN8A"
+                            src="https://www.hdcarwallpapers.com/thumbs/2023/lamborghini_revuelto_4k-t2.jpg"
                             alt="logo"
                         />
                         <h3>Sign in</h3>
@@ -93,13 +93,13 @@ const Login = ({ onLogin, isLoggedIn }) => {
                     <div className="loginContent">
                         <input
                             value={email}
-                            onChange={(e) => setEmail(e.target.value)}
+                            onChange={(event) => setEmail(event.target.value)}
                             type="text"
                             placeholder="Email"
                         />
                         <input
                             value={password}
-                            onChange={(e) => setPassword(e.target.value)}
+                            onChange={(event) => setPassword(event.target.value)}
                             type="password"
                             placeholder="Password"
                         />

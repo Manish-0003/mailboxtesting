@@ -1,18 +1,18 @@
-// src/Dashboard.js
-
 import React from 'react';
 import Sidebar from './Sidebar';
-import './Dashboard.css';
+import '../css/Dashboard.css';
 import Header from './Header';
+import { useDispatch } from 'react-redux';
 
-const Dashboard = () => {
+function Dashboard() {  
+  const dispatch = useDispatch();
+
   return (
     <div className="dashboard">
-        <Header />
+      <Header />
       <Sidebar />
       <div className="main-content">
         <h1>Welcome to the Dashboard</h1>
-        {/* Add your main content here */}
       </div>
     </div>
   );

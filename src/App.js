@@ -1,14 +1,38 @@
-// src/App.js
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Login from './Login';
-import Dashboard from './Dashboard';
-import Mail from './Mail';
-import SentMails from './SentMails'; // Import Mail component
+import { useDispatch, useSelector } from "react-redux";
+import { login, logout, selectUser } from "./store/userSlice";
+import { auth } from "./firebase";
+import Login from './components/Login';
+import Dashboard from './components/Dashboard';
+import Mail from './components/Mail';
+import SentMails from './components/SentMails'; 
 
-const App = () => {
+
+
+
+function App  () {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        dispatch(login({
+          uid: authUser.uid,
+          email: authUser.email,
+          displayName: authUser.displayName,
+          photoUrl: authUser.photoURL,
+        }));
+      } else {
+        dispatch(logout());
+      }
+    });
+
+    return unsubscribe;
+  }, [dispatch]);
 
   const handleLogin = () => {
     setIsLoggedIn(true);
@@ -16,14 +40,17 @@ const App = () => {
 
   return (
     <Router>
+      <div className="App"> 
+        
       <Routes>
         <Route path="/login" element={<Login onLogin={handleLogin} isLoggedIn={isLoggedIn} />} />
         <Route path="/dashboard" element={isLoggedIn ? <Dashboard /> : <Navigate to="/login" />} />
-        <Route path="/mail" element={isLoggedIn ? <Mail /> : <Navigate to="/login" />} /> {/* Add route for Mail component */}
+        <Route path="/mail" element={isLoggedIn ? <Mail /> : <Navigate to="/login" />} /> 
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/sent-mails" element={<SentMails />} />
       </Routes>
-
+    
+      </div>
     </Router>
   );
 };

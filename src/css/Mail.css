@@ -1,0 +1,76 @@
+.mail {
+  display: flex;
+  flex-direction: column;
+  height: auto; 
+  background-color: #f1f3f4;
+  color: #202124;
+  margin-left: 200px; 
+  padding-top: 60px; 
+  width: calc(100% - 200px);
+}
+
+.mail__containerTop, .mail__containerMid, .mail__containerMain {
+  background-color: #fff;
+  border-bottom: 1px solid black;
+}
+
+.mail__containerTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.mailTop, .mailTopRight {
+  display: flex;
+  align-items: center;
+}
+
+.mailTop .MuiSvgIcon-root, .mailTopRight .MuiSvgIcon-root, .mail__containerMidOption .MuiSvgIcon-root {
+  color: #000;
+  margin: 0 10px;
+}
+
+.mail__containerMid {
+  display: flex;
+  padding: 10px 0;
+}
+
+.mail__containerMidOptions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.mail__containerMidOption {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0 15px;
+  transition: background-color 0.3s;
+}
+
+.mail__containerMidOption:hover {
+  background-color: goldenrod;
+  border-radius: 15px;
+}
+
+.mail__containerMidOption h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: black;
+  margin: 0;
+}
+
+.mail__containerMain {
+  flex: 1;
+  overflow-y: scroll;
+}
+
+.mail__containerMain::-webkit-scrollbar {
+  display: none;
+}
+
+.mail__containerMainCards {
+  padding: 20px;
+}

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import "./MailCard.css";
-import { db } from "./firebase";
+import "../css/MailCard.css";
+import { db } from "../firebase";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
-import StarIcon from '@mui/icons-material/Star';
+
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import PrintIcon from '@mui/icons-material/Print';
 import LaunchIcon from '@mui/icons-material/Launch';
@@ -48,7 +48,7 @@ function MailCard() {
             <div className="accordionSummaryContent">
               <div className="accordLeft">
                 <CheckBoxOutlineBlankIcon  />
-                <StarIcon  />
+               
                 <Typography>{mail.to}</Typography>
               </div>
               <div className="accordMiddle">
@@ -64,22 +64,22 @@ function MailCard() {
               <div className="accordDetailsTop">
                 <p>{mail.subject || "No Subject"}</p>
                 <div className="accordDetailsTopRight">
-                  <PrintIcon sx={{ color: 'black' }} />
-                  <LaunchIcon sx={{ color: 'black' }} />
+                  <PrintIcon  />
+                  <LaunchIcon  />
                 </div>
               </div>
               <div className="accordDetailsInfo">
                 <Avatar />
                 <div className="sendersInfo">
                   <h4>
-                    {mail.from} <small>{mail.from}</small>
+                    {mail.from} 
                   </h4>
                   <small>{`to- ${mail.to}`}</small>
                 </div>
                 <div className="sendersInfoDate">
                   <div className="senderInfoDateOption">
-                    <small>{new Date(mail.timestamp?.toDate()).toUTCString()}</small>
-                    <StarIcon  />
+                    <small>{new Date(mail.timestamp?.toDate()).toLocaleString()}</small>
+                    
                     <ReplyIcon />
                     <MoreVertIcon />
                     <IconButton onClick={() => deleteMail(id)} >

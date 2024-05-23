@@ -57,7 +57,7 @@ body {
 }
 
 .loginContent button:hover {
-    background-color: #155ab6;
+    background-color: gold;
 }
 
 .loginContainer p {
@@ -68,6 +68,7 @@ body {
 
 .loginContainer p:hover {
     text-decoration: underline;
+    
 }
 
 .loading {
@@ -78,12 +79,14 @@ body {
 }
 
 .loading img {
-    width: 100px;
-    height: 100px;
+    width: 750px;
+    height: 600px;
+    border: 2px solid white;
+    border-radius: 8px;
 }
 
 .loading h1 {
     font-size: 24px;
-    color: #333;
+    color: white;
     margin-top: 20px;
 }

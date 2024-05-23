@@ -1,5 +1,5 @@
 import React from "react";
-import './Header.css';
+import '../css/Header.css';
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
@@ -7,9 +7,19 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import SettingsIcon from '@mui/icons-material/Settings';
 import DialpadIcon from '@mui/icons-material/Dialpad';
 import { Avatar } from "@mui/material";
-import { auth } from "./firebase";
+import { useDispatch } from 'react-redux';
+import { logout } from '../store/userSlice';
+import { useNavigate } from 'react-router-dom'; 
+
 
 function Header() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate(); 
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate('/login'); 
+  };
+
   return (
     <div className="header">
       <div className="headerLeft">
@@ -33,7 +43,7 @@ function Header() {
           <DialpadIcon/>
         </div>
         <div style={{ cursor: "pointer" }}>
-           <Avatar onClick ={() => auth.signOut()} /> 
+          <Avatar onClick={handleLogout} /> 
         </div>
       </div>
     </div>

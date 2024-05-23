@@ -1,5 +1,5 @@
 import React from "react";
-import "./Mail.css";
+import "../css/Mail.css";
 import { Checkbox } from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import RefreshIcon from "@mui/icons-material/Refresh";
@@ -14,14 +14,14 @@ import InfoIcon from "@mui/icons-material/Info";
 import ForumIcon from "@mui/icons-material/Forum";
 import MailCard from "./MailCard";
 import Sidebar from "./Sidebar";
-import Header from "./Header"; // Import the Header component
+import Header from "./Header"; 
 
 function Mail() {
     return (
         <div className="mail">
             <Sidebar />
             <div className="mail__container">
-                <Header /> {/* Include the Header component */}
+                <Header />
                 <div className="mail__containerTop">
                     <div className="mailTop">
                         <Checkbox className="checkbox" />
