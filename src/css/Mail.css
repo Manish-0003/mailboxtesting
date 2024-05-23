@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   height: auto; 
-  background-color: #f1f3f4;
+  background-color: white;
   color: #202124;
   margin-left: 200px; 
   padding-top: 60px; 
@@ -10,7 +10,7 @@
 }
 
 .mail__containerTop, .mail__containerMid, .mail__containerMain {
-  background-color: #fff;
+  background-color: white;
   border-bottom: 1px solid black;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .mailTop .MuiSvgIcon-root, .mailTopRight .MuiSvgIcon-root, .mail__containerMidOption .MuiSvgIcon-root {
-  color: #000;
+  color: black;
   margin: 0 10px;
 }
 
@@ -39,7 +39,7 @@
 .mail__containerMidOptions {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 90%;
 }
 
 .mail__containerMidOption {

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { auth } from "../firebase";
 import '../css/Login.css';
 
-function Login({ onLogin, isLoggedIn }) {
+function Login({ onLogin, isLoggedIn }) { 
     const navigate = useNavigate();
     const [register, setRegister] = useState(false);
     const [email, setEmail] = useState("");
@@ -16,15 +16,17 @@ function Login({ onLogin, isLoggedIn }) {
             await auth.createUserWithEmailAndPassword(email, password);
             alert('Registered successfully');
             onLogin();
-            navigate('/login'); 
+            navigate('/login',); 
         } catch (error) {
             alert(error.message);
         } finally {
             setLoading(false);
         }
     };
+    
 
     const handleLogin = async () => {
+        
         setLoading(true);
         try {
             await auth.signInWithEmailAndPassword(email, password);

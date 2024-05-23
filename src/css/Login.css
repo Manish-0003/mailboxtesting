@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f1f3f4;
+    background-color: whitesmoke;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,14 +19,14 @@ body {
 .loginContainer {
     width: 300px;
     background-color: white;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    box-shadow: 0px 0px 12px 12px aqua;
+    border-radius: 15px;
     padding: 20px;
     text-align: center;
 }
 
 .logo img {
-    width: 280px;
+    width: 300px;
     margin-bottom: 10px;
     border-radius: 10px;
 }
@@ -39,7 +39,7 @@ body {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #dcdcdc;
+    border: 1px solid white;
     border-radius: 5px;
     box-sizing: border-box;
 }
@@ -47,10 +47,10 @@ body {
 .loginContent button {
     width: 100%;
     padding: 10px;
-    background-color: #1a73e8;
+    background-color: blue;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
     margin-bottom: 10px;
@@ -61,7 +61,7 @@ body {
 }
 
 .loginContainer p {
-    color: #1a73e8;
+    color: blue;
     cursor: pointer;
     margin-top: 10px;
 }

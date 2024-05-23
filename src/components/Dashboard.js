@@ -1,12 +1,9 @@
-import React from 'react';
-import Sidebar from './Sidebar';
-import '../css/Dashboard.css';
-import Header from './Header';
-import { useDispatch } from 'react-redux';
+import React from "react";
+import Sidebar from "./Sidebar";
+import "../css/Dashboard.css";
+import Header from "./Header";
 
-function Dashboard() {  
-  const dispatch = useDispatch();
-
+function Dashboard() {
   return (
     <div className="dashboard">
       <Header />
@@ -16,6 +13,6 @@ function Dashboard() {
       </div>
     </div>
   );
-};
+}
 
 export default Dashboard;

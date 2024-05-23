@@ -6,8 +6,9 @@ import { login, logout, selectUser } from "./store/userSlice";
 import { auth } from "./firebase";
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
-import Mail from './components/Mail';
+
 import SentMails from './components/SentMails'; 
+import Mail from './components/Mail';
 
 
 
@@ -24,7 +25,7 @@ function App  () {
           uid: authUser.uid,
           email: authUser.email,
           displayName: authUser.displayName,
-          photoUrl: authUser.photoURL,
+          
         }));
       } else {
         dispatch(logout());
